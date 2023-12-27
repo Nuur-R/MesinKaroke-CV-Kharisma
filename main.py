@@ -1,6 +1,7 @@
 from keras.models import load_model
 import cv2
 import numpy as np
+from functions import ocr
 
 class ImageClassifier:
     def __init__(self, model_path, labels_path):
@@ -22,16 +23,34 @@ class ImageClassifier:
         confidence_score = prediction[0][index]
         return class_name[2:], confidence_score
 
+def class_handler(class_name, imgPath):
+    if class_name.rstrip('\n') == 'Judul_Lagu':
+        ocrString = ocr.perform_ocr(imgPath)
+        print(f"Img Text ==> {ocrString}")
+    else:
+        pass
+    
+
 def main():
     model_path = "model/keras_model.h5"
     labels_path = "model/labels.txt"
-    image_path = "test2.png"
 
     classifier = ImageClassifier(model_path, labels_path)
-    class_name, confidence_score = classifier.predict(image_path)
 
-    output_string = f"Class: {class_name}, Confidence Score: {str(np.round(confidence_score * 100))[:-2]}%"
-    print(output_string)
+    while True:
+        image_path = input("Enter the path of the image (or 'exit' to end): ")
+        
+        if image_path.lower() == 'exit':
+            break  # Exit the loop if the user enters 'exit'
+
+        try:
+            class_name, confidence_score = classifier.predict(image_path)
+            output_string = f"Class: {class_name}Confidence Score: {str(np.round(confidence_score * 100))[:-2]}%"
+            print(output_string)
+            class_handler(class_name, image_path)
+
+        except Exception as e:
+            print(f"Error processing image: {e}")
 
 if __name__ == "__main__":
     main()
