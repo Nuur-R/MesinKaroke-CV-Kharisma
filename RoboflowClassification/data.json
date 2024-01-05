@@ -1,0 +1,118 @@
+{
+    "predictions": [
+        {
+            "x": 717,
+            "y": 552,
+            "width": 1284,
+            "height": 717,
+            "confidence": 0.9747215509414673,
+            "class": "Musik",
+            "class_id": 3,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1585,
+            "y": 610,
+            "width": 411,
+            "height": 725,
+            "confidence": 0.968838095664978,
+            "class": "List-Musik",
+            "class_id": 2,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1558,
+            "y": 724,
+            "width": 315,
+            "height": 65,
+            "confidence": 0.9357509016990662,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1563,
+            "y": 928,
+            "width": 318,
+            "height": 65,
+            "confidence": 0.9317798614501953,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1548,
+            "y": 657,
+            "width": 288,
+            "height": 72,
+            "confidence": 0.9255741834640503,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1563,
+            "y": 525,
+            "width": 318,
+            "height": 65,
+            "confidence": 0.9172408580780029,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1543,
+            "y": 459,
+            "width": 279,
+            "height": 70,
+            "confidence": 0.9159811735153198,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1558,
+            "y": 588,
+            "width": 309,
+            "height": 64,
+            "confidence": 0.9155097603797913,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1563,
+            "y": 861,
+            "width": 318,
+            "height": 72,
+            "confidence": 0.9137742519378662,
+            "class": "Judul Musik",
+            "class_id": 0,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        },
+        {
+            "x": 1576,
+            "y": 795,
+            "width": 351,
+            "height": 75,
+            "confidence": 0.8924140930175781,
+            "class": "Judul Musik Hover",
+            "class_id": 1,
+            "image_path": "test/test6.png",
+            "prediction_type": "ObjectDetectionModel"
+        }
+    ],
+    "image": {
+        "width": "1920",
+        "height": "1080"
+    }
+}
