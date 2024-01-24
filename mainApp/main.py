@@ -7,8 +7,8 @@ from ocr import perform_ocr
 import asyncio
 
 API_KEY = "6zVobWAJvOh5A5fjkRot"
-INPUT_IMAGE_PATH = "1.png"
-VIDEO_PATH = "../test/Test3.mp4"
+# VIDEO_PATH = "../test/Test3.mp4"  # From Video
+VIDEO_PATH = 2 # From Camera
 
 # Load model TFLite dan label
 interpreter = tf.lite.Interpreter(model_path='models/model_unquant.tflite')
@@ -30,6 +30,10 @@ def image_processing():
 
 # Buka video
 cap = cv2.VideoCapture(VIDEO_PATH)
+# Dapatkan resolusi asli sumber video
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
 
 while cap.isOpened():
     # Baca frame
@@ -56,15 +60,15 @@ while cap.isOpened():
 
     predictions = interpreter.get_tensor(output_details[0]['index'])
     predicted_label = LABELS[np.argmax(predictions)]
-    
+
     is_on_list = True if predicted_label == '0 OnList' else False
-    
+
     if is_on_list==True:
         IMAGE_PROCESSING_STATE = False
         cv2.imwrite('images/OnList.jpg', frame)
     elif is_on_list==False and IMAGE_PROCESSING_STATE==False:
         image_processing()
-        
+
     # Tampilkan hasil di layar
     cv2.putText(frame, f'Label: {predicted_label}', (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
